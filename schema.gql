@@ -1,0 +1,50 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+directive @upper on FIELD_DEFINITION
+
+"""The user model"""
+type User {
+  _id: ID!
+
+  """Login"""
+  login: String!
+
+  """First name"""
+  firstName: String
+
+  """Last name"""
+  lastName: String
+
+  """Email"""
+  email: String!
+
+  """Date"""
+  creationDate: Date
+  name: String!
+}
+
+"""Date custom scalar type"""
+scalar Date
+
+type Query {
+  user(input: FindUserInput!): User!
+  me: User!
+}
+
+input FindUserInput {
+  id: ID!
+}
+
+type Mutation {
+  createUser(input: RegistrationInput!): User!
+}
+
+input RegistrationInput {
+  login: String!
+  password: String!
+  email: String!
+  firstName: String!
+  lastName: String!
+}
